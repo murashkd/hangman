@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.*;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Game {
@@ -70,7 +70,7 @@ public class Game {
                 if (!isValid(letter)) {
                     System.out.println("Можно вводить только буквы русского алфавита!");
                 }
-                if (isValid(letter)&&!unusedLetters.isUsed(letter)) {
+                if (isValid(letter) && !unusedLetters.isUsed(letter)) {
                     score.changeScore(letter);
                     unusedLetters.markUsedLetter(letter);
                 }
@@ -100,6 +100,7 @@ public class Game {
             }
         }
     }
+
     private Character enterLetter() {
         System.out.println("Введите букву: ");
         Scanner sc = new Scanner(System.in);
@@ -129,7 +130,8 @@ public class Game {
         }
         System.out.println("Загаданное слово: " + word);
     }
-    private String tryAgain(){
+
+    private String tryAgain() {
         System.out.println("Хотите начать игру? да/нет");
         Scanner sc = new Scanner(System.in);
         return sc.next().toLowerCase();
